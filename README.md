@@ -6,6 +6,17 @@ USE TestBase;
 GO
 ```
 
+Create the table that will have the sql dependency running:
+```
+CREATE TABLE [dbo].[tbLastLineChange](
+	[ChangeId] [int] IDENTITY(1,1) NOT NULL,
+	[GameNum] [int] NULL,
+	[PeriodNumber] [int] NULL,
+	[Store] [int] NULL
+) ON [PRIMARY]
+GO
+```
+
 Creates the queue for sql depedency
 ```
 CREATE QUEUE SQLDependencyQueue;
